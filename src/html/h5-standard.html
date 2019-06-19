@@ -4,13 +4,54 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+    <meta name="description" content="免费 Web & 编程 教程">
+    <meta name="author" content="Runoob">
+    <meta http-equiv="refresh" content="30">
     <title>h5 standard页面</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <base href="http://www.runoob.com/images/" target="_blank">
+    <style type="text/css">
+        body {background-color: #FFFFFF
+        }
+        p {color:blue}
+    </style>
     <!--h5兼容老标签-->
     <!--[if lt IE 9]>
     <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
     <![endif]-->
 </head>
 <body>
+<h1 id="tips">H5新增标签, 块级元素</h1>
+<p>我的第一个段落, 块级元素
+    <b>粗体</b><br>
+    <em>着重</em><br>
+    <i>斜体</i><br>
+    <small>定义小号字</small><br>
+    <strong>定义加重语气</strong><br>
+    <sub>定义下标字</sub><br>
+    <sup>定义上标字</sup><br>
+    <ins>定义插入字</ins><br>
+    <del>定义删除字</del><br>
+    <code>定义计算机代码</code><br>
+    <kbd>定义键盘码</kbd><br>
+    <samp>定义计算机代码样本</samp><br>
+    <var>var=abc</var><br>
+    <pre>1、定义预格式文本
+         2、定义预格式文本
+    </pre><br>
+    <abbr>定义缩写</abbr><br>
+    <address>定义地址</address><br>
+    <bdo>定义文字方向</bdo><br>
+    <blockquote> 定义长的引用</blockquote><br>
+    <q>定义短的引用语</q><br>
+    <cite>定义引用、引证</cite><br>
+    <dfn>定义一个定义项目。</dfn><br>
+</p>
+
+<img src="https://i2.hdfimg.com/ssi/image/biglogo2x.png" width="258" height="39" alt="Pulpit rock" />
+
+<br/>
 <!--h5新增video和audio标签：
     可以通过dom对video元素操作，支持myVideo.play()和 myVideo.pause()
 -->
@@ -19,8 +60,88 @@
     <source src="http://119.90.41.31/h5video/4724994.mp4" type="video/mp4">
        你的浏览器不支持 video 标签；多条source为了兼容老浏览器，依次向下播放。
 </video>
-<article>
-    asdfdsaf
+
+<br/>
+
+<a href="http://www.runoob.com" target="_blank">这是一个链接</a>
+
+<a href="#tips">连接到本页面</a>
+
+<hr>
+
+<article class="article" id="article" style="color:blue;margin-left:20px;">
+    ~article元素中文章作者的信息可通过address元素表示，但是不适用于嵌套的article元素。
+    ~article元素中文章的发布日期和时间可通过time元素的pubdate属性表示。
 </article>
+<aside>
+    ~aside通常用来在侧边栏显示一些定义，比如目录、索引、术语表等；
+    也可以用来显示相关的广告宣传，作者的介绍，Web应用，相关链接，当前页内容简介等。
+</aside>
+<bdi>
+    ~bdi允许您设置一段文本，使其脱离其父元素的文本方向设置。
+</bdi>
+<command>
+    ~command定义命令按钮，比如单选按钮、复选框或按钮
+</command>
+<details>
+    ~details用于描述文档或文档某个部分的细节
+</details>
+<dialog>
+    ~dialog定义对话框，比如提示框
+</dialog>
+<summary>
+    ~summary标签包含 details 元素的标题
+</summary>
+<figure>
+    ~规定独立的流内容（图像、图表、照片、代码等等）。
+</figure>
+
+<figcaption>
+    ~figcaption定义figure元素的标题
+</figcaption>
+
+<footer>
+    ~footer定义 section 或 document 的页脚。
+</footer>
+<header>
+    ~header定义了文档的头部区域
+</header>
+<mark>
+    ~mark定义带有记号的文本。
+</mark>
+<meter>
+    ~meter定义度量衡。仅用于已知最大和最小值的度量。
+
+</meter>
+<nav>
+    ~定义导航链接的部分。
+</nav>
+
+<progress>
+    ~定义任何类型的任务的进度。
+</progress>
+
+<ruby>
+     ~定义 ruby 注释（中文注音或字符）。
+</ruby>
+
+<rt>
+    ~rt定义字符（中文注音或字符）的解释或发音。
+</rt>>
+
+<rp>
+    ~rp在 ruby 注释中使用，定义不支持 ruby 元素的浏览器所显示的内容。
+</rp>
+
+<section>
+    ~定义文档中的节（section、区段）。
+</section>
+
+<time>
+    ~定义日期或时间。
+</time>
+
+<wbr> ~wbr规定在文本中的何处适合添加换行符。
+
 </body>
 </html>
