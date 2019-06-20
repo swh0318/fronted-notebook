@@ -105,7 +105,7 @@
 </div>
 
 <form action="" autocomplete="on" id="form1">
-    Username: <input type="text" name="user" autofocus="true"><br>
+    Username: <input type="text" name="user" pattern="[A-Za-z]{3}" autofocus="true" placeholder="First name" required><br>
     Password: <input type="password" name="password"><br>
     <input type="radio" name="sex" value="male">Male
     <input type="radio" name="sex" value="female">Female<br>
@@ -118,7 +118,9 @@
         <option value="audi">Audi</option>
     </select>
     <br>
-    <input type="submit" value="提交" formaction="demo-admin.php">
+    <input type="submit" value="提交" formaction="demo-admin.php" formenctype="multipart/form-data" formmethod="post"
+           formnovalidate="true" >
+    <input type="image" src="img_submit.gif"  alt="Submit" width="48" height="48" formtarget="_blank">
     <input type="hidden">
     选择你喜欢的颜色: <input type="color" name="favcolor"><br>
     <input type="date" name="bday">
@@ -133,6 +135,11 @@
         <option value="Safari">
     </datalist>
     <input type="reset" name="button" id="button" value="重置">
+</form>
+
+<form action="demo-form.php">
+    选择图片: <input type="file" name="img" multiple>
+    <input type="submit">
 </form>
 
 <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
@@ -324,7 +331,6 @@
     document.getElementById("mapholder").innerHTML="<img src='"+img_url+"'>";
 
 </script>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -390,9 +396,4 @@
 </script>
 </body>
 </html>
-
-
-
-
-
 </html>
