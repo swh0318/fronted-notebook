@@ -20,6 +20,8 @@
     <!--[if lt IE 9]>
     <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
     <![endif]-->
+    <noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+
 </head>
 <body>
 <h1 id="tips">H5新增标签, 块级元素</h1>
@@ -68,6 +70,84 @@
 <a href="#tips">连接到本页面</a>
 
 <hr>
+
+
+<table border="1" cellpadding="10" cellspacing="10">
+    <caption>Monthly savings</caption>
+    <tr colspan="2">
+        <th colspan="2">Header 1</th>
+    </tr>
+    <tr>
+        <td rowspan="2">row 1, cell 1</td>
+        <td>row 1, cell 2</td>
+    </tr>
+    <tr>
+        <td>row 2, cell 2</td>
+    </tr>
+</table>
+
+<div>颜色可以通过rbga(244,233,222,0.2), 最后一位标识透明度</div>
+
+<div>
+    <span>无序列表</span>
+<ol>
+    <li>Coffee</li>
+    <li>Milk</li>
+</ol>
+</div>
+
+<div>
+    <span>无序列表</span>
+<ul>
+    <li>Coffee</li>
+    <li>Milk</li>
+</ul>
+</div>
+
+<form action="">
+    Username: <input type="text" name="user"><br>
+    Password: <input type="password" name="password"><br>
+    <input type="radio" name="sex" value="male">Male
+    <input type="radio" name="sex" value="female">Female<br>
+    <input type="checkbox" name="vehicle" value="Bike">I have a bike
+    <input type="checkbox" name="vehicle" value="Car" checked="checked">I have a car<br>
+    <select name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+    </select>
+    <br>
+    <input type="submit" value="提交">
+    <input type="hidden">
+    选择你喜欢的颜色: <input type="color" name="favcolor"><br>
+    <input type="date" name="bday">
+    <input type="range" name="points" min="1" max="10">
+    <input type="number" name="quantity" min="1" max="5">
+    <input list="browsers" name="browser">
+    <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+    </datalist>
+    <input type="reset" name="button" id="button" value="重置">
+</form>
+
+<textarea rows="10" cols="30">
+我是一个文本框。
+</textarea>
+<br>
+<button type="button" onclick="getLocation()">点我!</button>
+
+<br>
+<a href="https://www.runoob.com/html/html-xhtml.html" target="iframe_a">xhtml规范</a>
+<iframe src="demo_iframe.htm" name="iframe_a" width="200" height="200" frameborder="0"></iframe>
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
+    您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
 
 <article class="article" id="article" style="color:blue;margin-left:20px;">
     ~article元素中文章作者的信息可通过address元素表示，但是不适用于嵌套的article元素。
@@ -142,6 +222,171 @@
 </time>
 
 <wbr> ~wbr规定在文本中的何处适合添加换行符。
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+
+    <mrow>
+        <msup><mi>a</mi><mn>2</mn></msup>
+        <mo>+</mo>
+
+        <msup><mi>b</mi><mn>2</mn></msup>
+        <mo>=</mo>
+
+        <msup><mi>c</mi><mn>2</mn></msup>
+    </mrow>
+
+</math>
+
+<style type="text/css">
+    #div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+</style>
+<script>
+    function allowDrop(ev)
+    {
+        ev.preventDefault();
+    }
+
+    function drag(ev)
+    {
+        ev.dataTransfer.setData("Text",ev.target.id);
+    }
+
+    function drop(ev)
+    {
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+</head>
+
+<p>拖动 RUNOOB.COM 图片到矩形框中:</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="/images/logo.png" draggable="true" ondragstart="drag(event)" width="336" height="69">
+
 
 </body>
+<script>
+    document.write("script 脚本输出！");
+    document.getElementById("tips").style.color="#ff0000";
+    document.write("常见字符实体&nbsp,&lt,&gt,&quot!!");
+</script>
+<script>
+
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+    ctx.fillStyle="#FF0000";
+    ctx.fillRect(0,0,150,75);
+
+    var x=document.getElementById("demo");
+    function getLocation()
+    {
+        if (navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(showPosition,,showError);
+        }
+        else
+        {
+            x.innerHTML="该浏览器不支持获取地理位置。";
+        }
+    }
+
+    function showPosition(position)
+    {
+        x.innerHTML="纬度: " + position.coords.latitude +
+            "<br>经度: " + position.coords.longitude;
+    }
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                x.innerHTML = "用户拒绝对获取地理位置的请求。"
+                break;
+            case error.POSITION_UNAVAILABLE:
+                x.innerHTML = "位置信息是不可用的。"
+                break;
+            case error.TIMEOUT:
+                x.innerHTML = "请求用户地理位置超时。"
+                break;
+            case error.UNKNOWN_ERROR:
+                x.innerHTML = "未知错误。"
+                break;
+        }
+    }
+    var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
+        +latlon+"&zoom=14&size=400x300&sensor=false";
+    document.getElementById("mapholder").innerHTML="<img src='"+img_url+"'>";
+
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+<p id="demo">点击按钮获取您当前坐标（可能需要比较长的时间获取）：</p>
+<button onclick="getLocation()">点我</button>
+<div id="mapholder"></div>
+<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+<script>
+    var x=document.getElementById("demo");
+    function getLocation()
+    {
+        if (navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(showPosition,showError);
+        }
+        else
+        {
+            x.innerHTML="该浏览器不支持获取地理位置。";
+        }
+    }
+
+    function showPosition(position)
+    {
+        lat=position.coords.latitude;
+        lon=position.coords.longitude;
+        latlon=new google.maps.LatLng(lat, lon)
+        mapholder=document.getElementById('mapholder')
+        mapholder.style.height='250px';
+        mapholder.style.width='500px';
+
+        var myOptions={
+            center:latlon,zoom:14,
+            mapTypeId:google.maps.MapTypeId.ROADMAP,
+            mapTypeControl:false,
+            navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+        };
+        var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
+        var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+    }
+
+    function showError(error)
+    {
+        switch(error.code)
+        {
+            case error.PERMISSION_DENIED:
+                x.innerHTML="用户拒绝对获取地理位置的请求。"
+                break;
+            case error.POSITION_UNAVAILABLE:
+                x.innerHTML="位置信息是不可用的。"
+                break;
+            case error.TIMEOUT:
+                x.innerHTML="请求用户地理位置超时。"
+                break;
+            case error.UNKNOWN_ERROR:
+                x.innerHTML="未知错误。"
+                break;
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
 </html>
