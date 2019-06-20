@@ -104,8 +104,8 @@
 </ul>
 </div>
 
-<form action="">
-    Username: <input type="text" name="user"><br>
+<form action="" autocomplete="on" id="form1">
+    Username: <input type="text" name="user" autofocus="true"><br>
     Password: <input type="password" name="password"><br>
     <input type="radio" name="sex" value="male">Male
     <input type="radio" name="sex" value="female">Female<br>
@@ -118,7 +118,7 @@
         <option value="audi">Audi</option>
     </select>
     <br>
-    <input type="submit" value="提交">
+    <input type="submit" value="提交" formaction="demo-admin.php">
     <input type="hidden">
     选择你喜欢的颜色: <input type="color" name="favcolor"><br>
     <input type="date" name="bday">
@@ -135,7 +135,13 @@
     <input type="reset" name="button" id="button" value="重置">
 </form>
 
-<textarea rows="10" cols="30">
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+    <input type="range" id="a" value="50">100
+    +<input type="number" id="b" value="50">
+    =<output name="x" for="a b"></output>
+</form>
+
+<textarea rows="10" cols="30" form="form1">
 我是一个文本框。
 </textarea>
 <br>
